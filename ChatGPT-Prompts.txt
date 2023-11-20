@@ -1,0 +1,72 @@
+Prompt: Explain to me Encapsulation in C#
+
+
+ChatGPT Response:
+Encapsulation is one of the fundamental principles of object-oriented programming (OOP) and is supported in C#. 
+It refers to the bundling of data (attributes or fields) and methods (functions or procedures) that operate on the data into a single unit known as a class.
+ The internal details of the class, such as the implementation of methods and the representation of data,
+  are hidden from the outside world. Only a class's public interface, which consists of its public methods and properties, is accessible to the external code.
+
+Here are key aspects of encapsulation in C#:
+
+    Access Modifiers:
+    C# provides access modifiers to control the visibility of class members. The common access
+     modifiers include public, private, protected, and internal. These modifiers 
+     determine whether a class member can be accessed from outside the class.
+        public: Accessible from any other class.
+        private: Accessible only within the same class.
+        protected: Accessible within the same class and its derived classes.
+        internal: Accessible within the same assembly.
+
+    Properties and Methods:
+    Encapsulation involves exposing the internal state of an object through properties and methods. 
+    Properties allow controlled access to the internal fields of a class, and methods define the
+     operations that can be performed on the object's data.
+     public class MyClass
+{
+    // Private field encapsulated using a property
+    private int myField;
+
+    public int MyProperty
+    {
+        get { return myField; }
+        set { myField = value; }
+    }
+
+    // Public method encapsulating functionality
+    public void PerformAction()
+    {
+        // Perform some action
+    }
+}
+Getters and Setters:
+In C#, properties are often used to encapsulate fields. The get accessor provides read access,
+ and the set accessor provides write access. This allows for controlled access to the internal 
+ state of the object.
+
+Information Hiding:
+Encapsulation helps with information hiding. By exposing only a limited and well-defined 
+interface to the external world, the internal implementation details of the class can be changed
+ without affecting the code that uses the class.
+ public class BankAccount
+{
+    private decimal balance;
+
+    public decimal GetBalance()
+    {
+        // Some complex logic to calculate balance
+        return balance;
+    }
+
+    public void Deposit(decimal amount)
+    {
+        // Validate and update balance
+        balance += amount;
+    }
+}
+    In this example, the actual representation of the balance is hidden, and clients interact with the 
+    account using the GetBalance and Deposit methods.
+
+Encapsulation contributes to building modular, maintainable, and scalable code by providing a 
+clear separation between the internal workings of a class and its external interactions. It also helps
+ prevent unintended interference or modification of the internal state by external code.
